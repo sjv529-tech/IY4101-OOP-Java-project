@@ -1,15 +1,27 @@
-public class shape {
-    private coordinates;
+public class shape extends coordinates{
     int sides;
 
-    private int getCoordinates extends coordinates{
+    abstract int getCoordinates{
         return x;
         return y;
     }
 
-    private vint getSides(shape){
+    abstract int getSides(shape){
         return sides;
     }
 
-    private void setCoordinates()
+    abstract void setCoordinates(coordinates newcoord){
+        coordinates = newcoord;
+    }
+
+    abstract void translate(int dx, int dy){
+    }
+
+    abstract double getArea(){}
+
+    abstract double getPerimeter(){}
+
+    abstract String display(){}
+
+
 }
