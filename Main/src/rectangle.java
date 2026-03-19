@@ -1,10 +1,9 @@
 public class rectangle extends shape {
-    // Additional attributes specific to rectangles
-    private double width;   // How wide is the rectangle?
+    private double width;   
     private double length; 
 
         public rectangle(coordinates pos, double width, double length) {
-        super(4, pos);  // Call the parent constructor: rectangles have 4 sides
+        super(4, pos); 
         this.width = width;
         this.length = length;
     }
@@ -22,17 +21,14 @@ public class rectangle extends shape {
     @Override
     public void scale(int factor, boolean sign) {
         if (sign == true) {
-            // Multiply
             this.width = this.width * factor;
             this.length = this.length * factor;
         } else {
-            // Divide (check for zero)
             if (factor != 0) {
                 this.width = this.width / factor;
                 this.length = this.length / factor;
             }
         }
-        // Also scale the position (the center point)
         getCoordinates().scale(factor, sign);
     }
 
