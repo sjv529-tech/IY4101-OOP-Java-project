@@ -1,44 +1,29 @@
 import java.util.Scanner;
 
-/**
- * shapemanager class - the main program with the menu
- * This is what the user interacts with
- */
 public class shapeManage {
     private shapeList shapelist;
     private Scanner scanner;
-    
-    /**
-     * Set up the program
-     */
+
     public void shapeManager() {
         shapelist = new shapeList();
         scanner = new Scanner(System.in);
     }
     
-    /**
-     * Show the menu options
-     */
     private void displayMenu() {
-        System.out.println("\n═══════════════════════════════");
         System.out.println("     SHAPE MANAGEMENT MENU");
-        System.out.println("═══════════════════════════════");
-        System.out.println("1. ➕ Add a shape");
-        System.out.println("2. ❌ Remove a shape");
-        System.out.println("3. 🔍 Get shape information");
-        System.out.println("4. 📐 Show area & perimeter");
-        System.out.println("5. 📋 Display all shapes");
-        System.out.println("6. 🚚 Translate all shapes");
-        System.out.println("7. 🔄 Scale all shapes");
-        System.out.println("0. 👋 Quit");
+        System.out.println("1.  Add a shape");
+        System.out.println("2.  Remove a shape");
+        System.out.println("3.  Get shape information");
+        System.out.println("4.  Show area & perimeter");
+        System.out.println("5.  Display all shapes");
+        System.out.println("6.  Translate all shapes");
+        System.out.println("7.  Scale all shapes");
+        System.out.println("0.  Quit");
         System.out.print("Enter your choice: ");
     }
-    
-    /**
-     * Add a new shape (option 1)
-     */
+
     private void addShape() {
-        System.out.println("\n--- ADD A SHAPE ---");
+        System.out.println("\n ADD A SHAPE ");
         System.out.println("1. Rectangle");
         System.out.println("2. Square");
         System.out.println("3. Circle");
@@ -48,7 +33,7 @@ public class shapeManage {
         int type = scanner.nextInt();
         
         switch(type) {
-            case 1: // Rectangle
+            case 1: //Rectangle
                 System.out.print("Enter X position: ");
                 int x = scanner.nextInt();
                 System.out.print("Enter Y position: ");
@@ -62,7 +47,7 @@ public class shapeManage {
                 shapelist.addShape(r);
                 break;
                 
-            case 2: // Square
+            case 2: //Square
                 System.out.print("Enter X position: ");
                 x = scanner.nextInt();
                 System.out.print("Enter Y position: ");
@@ -117,18 +102,12 @@ public class shapeManage {
         }
     }
     
-    /**
-     * Remove a shape (option 2)
-     */
     private void removeShape() {
         System.out.print("Enter position to remove: ");
         int pos = scanner.nextInt();
         shapelist.removeShape(pos);
     }
     
-    /**
-     * Get info about a specific shape (option 3)
-     */
     private void getShapeInfo() {
         System.out.print("Enter position: ");
         int pos = scanner.nextInt();
@@ -137,10 +116,7 @@ public class shapeManage {
             System.out.println(s.display());
         }
     }
-    
-    /**
-     * Get area and perimeter (option 4)
-     */
+
     private void getAreaPerimeter() {
         System.out.print("Enter position: ");
         int pos = scanner.nextInt();
@@ -153,10 +129,7 @@ public class shapeManage {
             System.out.println("  📐 Perimeter = " + perimeter);
         }
     }
-    
-    /**
-     * Move all shapes (option 6)
-     */
+
     private void translateAll() {
         System.out.print("Enter dx (horizontal move): ");
         int dx = scanner.nextInt();
@@ -165,10 +138,7 @@ public class shapeManage {
         
         shapelist.translateShapes(dx, dy);
     }
-    
-    /**
-     * Resize all shapes (option 7)
-     */
+ 
     private void scaleAll() {
         System.out.print("Enter factor: ");
         int factor = scanner.nextInt();
@@ -177,16 +147,11 @@ public class shapeManage {
         
         shapelist.scaleShapes(factor, sign);
     }
-    
-    /**
-     * Run the main program
-     */
+
     public void run() {
         int choice;
-        
-        System.out.println("╔══════════════════════════════╗");
-        System.out.println("║   SHAPE MANAGEMENT SYSTEM    ║");
-        System.out.println("╚══════════════════════════════╝");
+
+        System.out.println("SHAPE MANAGEMENT SYSTEM");
         
         do {
             displayMenu();
@@ -215,10 +180,10 @@ public class shapeManage {
                     scaleAll();
                     break;
                 case 0:
-                    System.out.println("\n👋 Goodbye! Thanks for using Shape Manager!");
+                    System.out.println("\n Goodbye! Thanks for using Shape Manager!");
                     break;
                 default:
-                    System.out.println("❌ Invalid choice. Please try again.");
+                    System.out.println(" Invalid choice. Please try again.");
             }
         } while (choice != 0);
         
