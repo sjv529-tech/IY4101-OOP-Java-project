@@ -1,23 +1,24 @@
 public class rectangle extends shape {
-    private double width;   
-    private double length; 
+    private double width;
+    private double length;
 
-        public rectangle(coordinates pos, double width, double length) {
-        super(4, pos); 
+    public rectangle(coordinates pos, double width, double length) {
+        super(4, pos);  // Rectangle has 4 sides
         this.width = width;
         this.length = length;
     }
-    
+
     @Override
     public double getArea() {
-        return width * length;
+        return width * length;  // Area = width × length
     }
 
-        @Override
+    @Override
     public double getPerimeter() {
-        return 2 * (width + length);
+        return 2 * (width + length);  // Perimeter = 2 × (w + l)
     }
 
+    // Scales both dimensions and position coordinates
     @Override
     public void scale(int factor, boolean sign) {
         if (sign == true) {
@@ -34,9 +35,8 @@ public class rectangle extends shape {
 
     @Override
     public String display() {
-        return "RECTANGLE: Position " + getCoordinates().display() + 
-               ", Width = " + width + ", Length = " + length +
-               ", Area = " + getArea() + ", Perimeter = " + getPerimeter();
+        return "RECTANGLE: Position " + getCoordinates().display() +
+                ", Width = " + width + ", Length = " + length +
+                ", Area = " + getArea() + ", Perimeter = " + getPerimeter();
     }
-
 }
