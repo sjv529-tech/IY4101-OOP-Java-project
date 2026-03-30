@@ -10,7 +10,7 @@ public class shapeList {
     // Adds a shape and displays confirmation with current count
     public void addShape(shape s) {
         listofShapes.add(s);
-        System.out.println("✓ Shape added. Total shapes: " + listofShapes.size());
+        System.out.println("Shape added. Total shapes: " + listofShapes.size());
     }
 
     // Removes shape by 1-indexed position, returns null if invalid
